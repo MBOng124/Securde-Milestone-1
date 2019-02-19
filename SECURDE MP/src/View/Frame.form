@@ -154,6 +154,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Admin Home"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -179,6 +180,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Manager Home"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -194,6 +196,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Staff Home"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -209,6 +212,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Client Home"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>

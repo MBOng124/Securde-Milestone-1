@@ -1,10 +1,13 @@
-
 package View;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 
 public class Register extends javax.swing.JPanel {
 
     public Frame frame;
-    
+
     public Register() {
         initComponents();
     }
@@ -101,8 +104,59 @@ public class Register extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        frame.registerAction(username.getText(), password.getText(), confpass.getText());
-        frame.loginNav();
+        String user = username.getText();
+        String userPassChecker = "[";
+        userPassChecker += user + "]";
+        String temp = "";
+        String pass = password.getText();
+        String confirm = confpass.getText();
+        Boolean nullTextField;
+        
+        nullTextField = IsNull(user, pass, confirm);
+
+        if (nullTextField == true) {
+            JOptionPane.showMessageDialog(frame, "All fields should not be left blank");
+        } //                "[!@#$%^&*(),.?\"\':{}|<> ]";
+        else if (frame.main.checkIfUserExists(user)) {
+            if (VerifyPassword(pass, confirm)) {
+                if(pass.length() > 7){
+                    temp = pass;
+                    temp.replaceAll(userPassChecker, "");
+                    if(!(temp.length() < pass.length() - 2)){
+                        Pattern p = Pattern.compile("[A-Z]");
+                        Pattern p2 = Pattern.compile("[a-z]");
+                        Matcher m = p.matcher(pass);
+                        Matcher m2 = p2.matcher(pass);
+                        if(m.find() && m2.find()){
+                            Pattern p3 = Pattern.compile("[!@#$%^&*(),.?\"\':{}|<> ]");
+                            Matcher m3 = p3.matcher(pass);
+                            if(m3.find()){
+                                pass = frame.main.hashString(pass);
+                                frame.registerAction(user, pass, confirm);
+                                frame.loginNav();
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(frame, "Password Should Have At least 1 Special Character... Spaces are not allowed");
+                            }
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(frame, "Password Should At least have 1 Capital and small Letter");
+                        }
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(frame, "Password Should Not Contain more than 3 Characters From Your Username");
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(frame, "Password Should Be More than 8 Characters!");
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(frame, "Please Make Sure Your Passwords matches");
+            }
+        } else {
+            JOptionPane.showMessageDialog(frame, "Username Already Exists");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -118,4 +172,34 @@ public class Register extends javax.swing.JPanel {
     private javax.swing.JTextField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
+public boolean IsNull(String user, String pass, String conf) {
+        if (user.equals("")) {
+            return true;
+        }
+
+        if (pass.equals("")) {
+            return true;
+        }
+
+        if (conf.equals("")) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean VerifyPassword(String password, String confirm) {
+        if (password.equals(confirm)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void clearFields() {
+        username.setText("");
+        password.setText("");
+        confpass.setText("");
+    }
+
 }

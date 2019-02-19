@@ -1,13 +1,13 @@
 package View;
 
 import Controller.Main;
-import java.awt.BorderLayout;
+import Model.User;
 import java.awt.CardLayout;
-import java.awt.Dimension;
 import javax.swing.WindowConstants;
 
 public class Frame extends javax.swing.JFrame {
 
+    private User user;
     public Frame() {
         initComponents();
     }
@@ -49,6 +49,7 @@ public class Frame extends javax.swing.JFrame {
         adminBtn.setBackground(new java.awt.Color(250, 250, 250));
         adminBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         adminBtn.setText("Admin Home");
+        adminBtn.setEnabled(false);
         adminBtn.setFocusable(false);
         adminBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +65,7 @@ public class Frame extends javax.swing.JFrame {
         managerBtn.setBackground(new java.awt.Color(250, 250, 250));
         managerBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         managerBtn.setText("Manager Home");
+        managerBtn.setEnabled(false);
         managerBtn.setFocusable(false);
         managerBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +76,7 @@ public class Frame extends javax.swing.JFrame {
         staffBtn.setBackground(new java.awt.Color(250, 250, 250));
         staffBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         staffBtn.setText("Staff Home");
+        staffBtn.setEnabled(false);
         staffBtn.setFocusable(false);
         staffBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +87,7 @@ public class Frame extends javax.swing.JFrame {
         clientBtn.setBackground(new java.awt.Color(250, 250, 250));
         clientBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         clientBtn.setText("Client Home");
+        clientBtn.setEnabled(false);
         clientBtn.setFocusable(false);
         clientBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,6 +199,15 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_clientBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+        this.removeUser();
+//        clientBtn.setVisible(false);
+//        managerBtn.setVisible(false);
+//        staffBtn.setVisible(false);
+//        adminBtn.setVisible(false);
+        clientBtn.setEnabled(false);
+        managerBtn.setEnabled(false);
+        staffBtn.setEnabled(false);
+        adminBtn.setEnabled(false);
         frameView.show(Container, "loginPnl");
     }//GEN-LAST:event_logoutBtnActionPerformed
 
@@ -225,13 +238,41 @@ public class Frame extends javax.swing.JFrame {
         Container.add(HomePnl, "homePnl");
         frameView.show(Container, "loginPnl");
         
+//        clientBtn.setVisible(false);
+//        managerBtn.setVisible(false);
+//        staffBtn.setVisible(false);
+//        adminBtn.setVisible(false);
+        
         Content.setLayout(contentView);
-        Content.add(adminHomePnl, "adminHomePnl");
-        Content.add(managerHomePnl, "managerHomePnl");
-        Content.add(staffHomePnl, "staffHomePnl");
-        Content.add(clientHomePnl, "clientHomePnl");
         
         this.setVisible(true);
+    }
+    
+    private void authorize(int role){      
+        if(role == 2){
+            clientBtn.setEnabled(true);
+//            clientBtn.setVisible(true);
+            Content.add(clientHomePnl, "clientHomePnl");
+            contentView.show(Content, "clientHomePnl");
+        }
+        if(role == 3){
+            staffBtn.setEnabled(true);
+//            staffBtn.setVisible(true);
+            Content.add(staffHomePnl, "staffHomePnl");
+            contentView.show(Content, "staffHomePnl");
+        }
+        if(role == 4){
+            managerBtn.setEnabled(true);
+//            managerBtn.setVisible(true);
+            Content.add(managerHomePnl, "managerHomePnl");
+            contentView.show(Content, "managerHomePnl");
+        }
+        if(role == 5 ){
+            adminBtn.setEnabled(true);
+//            adminBtn.setVisible(true);
+            Content.add(adminHomePnl, "adminHomePnl");
+            contentView.show(Content, "adminHomePnl");
+        }
     }
     
     public void mainNav(){
@@ -247,7 +288,7 @@ public class Frame extends javax.swing.JFrame {
     }
     
     public void registerAction(String username, String password, String confpass){
-        main.sqlite.addUser(username, password);
+        main.sqlite.addUser(username, password, 2);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -262,4 +303,23 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JButton managerBtn;
     private javax.swing.JButton staffBtn;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
+        authorize(user.getRole());
+    }
+    
+    public void removeUser(){
+        this.user = null;
+    }
 }
