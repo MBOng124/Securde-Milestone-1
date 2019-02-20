@@ -14,6 +14,7 @@ public class Login extends javax.swing.JPanel {
     //THESE VARIABLES ARE FOR HIGHLIGHTING INDICES OF PASSWORD
     private int highlightStart;
     private int highlightEnd;
+    private int passwordCounter = 0;
 
     public Login() {
         initComponents();
@@ -135,19 +136,44 @@ public class Login extends javax.swing.JPanel {
             frame.main.setUsername("");
             frame.main.setPassword("");
         } catch (NullPointerException e) {
-            jLabel2.setText("Invalid Login Details!!!");
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(3000);
-                        jLabel2.setText("");
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+    
+            if(passwordCounter < 4) {
+            	jLabel2.setText("Invalid Login Details!!!");
+//            	clearFields();
+            	Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(3000);
+                            jLabel2.setText("");
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
-                }
-            });
-            thread.start();
+                });
+                thread.start();
+                passwordCounter++;
+            }
+            else {
+            	Message("Textfields are disabled at the moment, please try after 30 seconds");
+            	jTextField1.setEnabled(false);
+            	jTextField2.setEnabled(false);
+            	Thread thread = new Thread(new Runnable(){
+            		@Override
+            		public void run() {
+            			try {
+            				Thread.sleep(30000);
+            				jTextField1.setEnabled(true);
+	    					jTextField2.setEnabled(true);
+	    					passwordCounter = 0;
+            			} catch (InterruptedException ex) {
+            				ex.printStackTrace();
+            			}
+            		}
+				});
+            	thread.start();
+            }
+			System.out.println("passwordCounter= " + passwordCounter);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -247,4 +273,9 @@ public class Login extends javax.swing.JPanel {
     public void setHighlightEnd(int highlightEnd) {
         this.highlightEnd = highlightEnd;
     }
+    
+//    public void clearFields() {
+//    	jTextField1.setText("");
+//    	jTextField2.setText("");
+//    }
 }

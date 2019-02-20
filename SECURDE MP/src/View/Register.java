@@ -1,5 +1,6 @@
 package View;
 
+import java.awt.Event;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -12,6 +13,11 @@ public class Register extends javax.swing.JPanel {
         initComponents();
     }
 
+    //THESE VARIABLES ARE FOR HIGHLIGHTING INDICES OF PASSWORD
+    	private int highlightStart;
+    	private int highlightEnd;
+
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -37,7 +43,22 @@ public class Register extends javax.swing.JPanel {
         password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
-
+        
+        password.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jTextField2MouseReleased(evt);
+            }
+        });
+        password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2KeyTyped(evt);
+            }
+        });
+        
+        
         username.setBackground(new java.awt.Color(240, 240, 240));
         username.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -164,6 +185,84 @@ public class Register extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
+    
+    /*
+     * THIS FUNCTION IS FOR CONVERTING THE TEXT IN THE TEXTFIELD INTO A SET OF *
+     */
+    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+        int temp = 0; // used for caret positioning
+        if (evt.getKeyChar() == Event.BACK_SPACE) {
+            frame.main.backSpace(this.getHighlightStart(), this.getHighlightEnd(), password.getCaretPosition());
+        }
+        else if ((getHighlightStart() != getHighlightEnd()) && (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]") 
+                || Character.isLetterOrDigit(evt.getKeyChar()))) {
+            evt.consume();
+            frame.main.backSpace(this.getHighlightStart(), this.getHighlightEnd(), password.getCaretPosition());
+            frame.main.savePassword(evt.getKeyChar(), password.getCaretPosition());
+            temp = this.getHighlightStart();
+            password.setText(frame.main.convertPassword());
+            password.setCaretPosition(temp + 1);
+            
+        }
+        else if (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]") 
+                || Character.isLetterOrDigit(evt.getKeyChar())) {
+            evt.consume();
+            frame.main.savePassword(evt.getKeyChar(), password.getCaretPosition());
+            temp = password.getCaretPosition();
+            password.setText(frame.main.convertPassword());
+            password.setCaretPosition(temp + 1);
+        }
+        else{
+            evt.consume();
+        }
+        frame.main.setUsername(password.getText().toString());
+        this.setHighlightStart(password.getSelectionStart());
+        this.setHighlightEnd(password.getSelectionEnd());
+    }//GEN-LAST:event_jTextField2KeyTyped
+
+    private void jTextField2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseReleased
+        this.setHighlightStart(password.getSelectionStart());
+        this.setHighlightEnd(password.getSelectionEnd());
+    }//GEN-LAST:event_jTextField2MouseReleased
+
+    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
+//        if(jTextField2.getSelectionStart() == 0 ){
+//            
+//        }
+        this.setHighlightStart(password.getSelectionStart());
+        this.setHighlightEnd(password.getSelectionEnd());
+    }//GEN-LAST:event_jTextField2KeyReleased
+    
+    
+    /**
+     * @return the highlightStart
+     */
+    public int getHighlightStart() {
+        return highlightStart;
+    }
+
+    /**
+     * @param highlightStart the highlightStart to set
+     */
+    public void setHighlightStart(int highlightStart) {
+        this.highlightStart = highlightStart;
+    }
+
+    /**
+     * @return the highlightEnd
+     */
+    public int getHighlightEnd() {
+        return highlightEnd;
+    }
+
+    /**
+     * @param highlightEnd the highlightEnd to set
+     */
+    public void setHighlightEnd(int highlightEnd) {
+        this.highlightEnd = highlightEnd;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField confpass;
     private javax.swing.JButton jButton1;
@@ -172,18 +271,19 @@ public class Register extends javax.swing.JPanel {
     private javax.swing.JTextField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
-public boolean IsNull(String user, String pass, String conf) {
-        if (user.equals("")) {
-            return true;
-        }
+    
+    public boolean IsNull(String user, String pass, String conf) {
+        	if (user.equals("")) {
+        		return true;
+        	}
 
-        if (pass.equals("")) {
-            return true;
-        }
+        	if (pass.equals("")) {
+        		return true;
+        	}
 
-        if (conf.equals("")) {
-            return true;
-        }
+        	if (conf.equals("")) {
+        		return true;
+        	}
 
         return false;
     }
