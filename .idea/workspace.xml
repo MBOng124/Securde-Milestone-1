@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b62545c-4ade-4553-8811-fcbb14ebc7a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SECURDE MP/src/Controller/SQLite.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/Controller/SQLite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SECURDE MP/src/View/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/View/Frame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SECURDE MP/src/View/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/View/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SECURDE MP/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/View/Register.java" afterDir="false" />
@@ -19,11 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="102">
               <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <element signature="method#hashString#0;class#User#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -31,14 +28,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-800">
-              <caret line="146" column="48" selection-start-line="146" selection-start-column="48" selection-end-line="146" selection-end-column="48" />
+            <state relative-caret-position="306">
+              <caret line="140" selection-start-line="140" selection-end-line="140" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#234#235#0" expanded="true" />
                 <element signature="e#266#267#0" expanded="true" />
                 <element signature="e#406#436#0" expanded="true" />
                 <element signature="e#441#530#0" expanded="true" />
+                <element signature="method#initComponents#0;class#Register#0" />
                 <element signature="e#1235#1236#0" expanded="true" />
                 <element signature="e#1295#1296#0" expanded="true" />
                 <element signature="e#1859#2036#0" expanded="true" />
@@ -55,8 +53,16 @@
                 <element signature="e#4160#4161#0" expanded="true" />
                 <element signature="e#4547#4548#0" expanded="true" />
                 <element signature="e#4607#4608#0" expanded="true" />
-                <element signature="e#12243#12244#0" expanded="true" />
-                <element signature="e#12280#12281#0" expanded="true" />
+                <element signature="method#jButton1ActionPerformed#0;class#Register#0" />
+                <element signature="method#jTextField2KeyTyped#0;class#Register#0" />
+                <element signature="method#jTextField2KeyTyped#1;class#Register#0" />
+                <element signature="method#jTextField2MouseReleased#0;class#Register#0" />
+                <element signature="method#jTextField2MouseReleased#1;class#Register#0" />
+                <element signature="method#jTextField2KeyReleased#0;class#Register#0" />
+                <element signature="e#11862#11902#0" />
+                <element signature="method#jTextField2KeyReleased#1;class#Register#0" />
+                <element signature="e#13009#13049#0" />
+                <element signature="docComment;method#setHighlightStart#0;class#Register#0" />
                 <element signature="e#12408#12409#0" expanded="true" />
                 <element signature="e#12460#12461#0" expanded="true" />
                 <element signature="e#12544#12545#0" expanded="true" />
@@ -69,23 +75,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.desktop/javax/swing/text/JTextComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="1684" column="16" selection-start-line="1684" selection-start-column="16" selection-end-line="1684" selection-end-column="16" />
-              <folding>
-                <element signature="e#62369#62370#0" expanded="true" />
-                <element signature="e#62406#62407#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+            <state relative-caret-position="-323">
+              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding>
                 <element signature="e#5066#5067#0" expanded="true" />
                 <element signature="e#5097#5098#0" expanded="true" />
@@ -107,19 +100,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Controller/SQLite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-799">
-              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+            <state relative-caret-position="374">
+              <caret line="181" column="38" lean-forward="true" selection-start-line="179" selection-start-column="8" selection-end-line="181" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -127,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Frame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="225" column="12" selection-start-line="225" selection-start-column="12" selection-end-line="225" selection-end-column="12" />
+            <state relative-caret-position="192">
+              <caret line="225" column="108" lean-forward="true" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="108" />
               <folding>
                 <element signature="e#214#215#0" expanded="true" />
                 <element signature="e#246#247#0" expanded="true" />
@@ -163,7 +147,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/ManagerHome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="-68">
               <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="docComment;method#initComponents#0;class#ManagerHome#0" />
@@ -180,6 +164,7 @@
       <find>convert</find>
       <find>bac</find>
       <find>password</find>
+      <find>main</find>
     </findStrings>
     <replaceStrings>
       <replace>confpass</replace>
@@ -193,10 +178,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/SECURDE MP/src/Model/User.java" />
-        <option value="$PROJECT_DIR$/SECURDE MP/src/View/Frame.java" />
-        <option value="$PROJECT_DIR$/SECURDE MP/src/View/Login.java" />
         <option value="$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java" />
         <option value="$PROJECT_DIR$/SECURDE MP/src/View/Register.java" />
+        <option value="$PROJECT_DIR$/SECURDE MP/src/Controller/SQLite.java" />
+        <option value="$PROJECT_DIR$/SECURDE MP/src/View/Frame.java" />
+        <option value="$PROJECT_DIR$/SECURDE MP/src/View/Login.java" />
       </list>
     </option>
   </component>
@@ -302,18 +288,18 @@
       <workItem from="1550405746042" duration="594000" />
       <workItem from="1550452763524" duration="3478000" />
       <workItem from="1550549852463" duration="3676000" />
-      <workItem from="1550628080995" duration="5873000" />
+      <workItem from="1550628080995" duration="7320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16293000" />
+    <option name="totallyTimeSpent" value="17740000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23892617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23892617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -322,7 +308,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28611898" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28611898" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -348,41 +334,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/SECURDE MP/src/View/ManagerHome.java</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Login.form">
       <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/ManagerHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="docComment;method#initComponents#0;class#ManagerHome#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="method#hashString#0;class#User#0" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.desktop/java/awt/event/InputEvent.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -395,10 +349,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.desktop/javax/swing/text/JTextComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="1684" column="16" selection-start-line="1684" selection-start-column="16" selection-end-line="1684" selection-end-column="16" />
+          <folding>
+            <element signature="e#62369#62370#0" expanded="true" />
+            <element signature="e#62406#62407#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/ManagerHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="docComment;method#initComponents#0;class#ManagerHome#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Controller/SQLite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2057">
+          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="e#5066#5067#0" expanded="true" />
+            <element signature="e#5097#5098#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/StaffHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="e#643#732#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Frame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="225" column="12" selection-start-line="225" selection-start-column="12" selection-end-line="225" selection-end-column="12" />
+        <state relative-caret-position="192">
+          <caret line="225" column="108" lean-forward="true" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="108" />
           <folding>
             <element signature="e#214#215#0" expanded="true" />
             <element signature="e#246#247#0" expanded="true" />
@@ -431,60 +441,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-799">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Controller/SQLite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/StaffHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="e#643#732#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
-          <folding>
-            <element signature="e#5066#5067#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.desktop/javax/swing/text/JTextComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="1684" column="16" selection-start-line="1684" selection-start-column="16" selection-end-line="1684" selection-end-column="16" />
-          <folding>
-            <element signature="e#62369#62370#0" expanded="true" />
-            <element signature="e#62406#62407#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="181" column="38" lean-forward="true" selection-start-line="179" selection-start-column="8" selection-end-line="181" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-800">
-          <caret line="146" column="48" selection-start-line="146" selection-start-column="48" selection-end-line="146" selection-end-column="48" />
+        <state relative-caret-position="306">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#234#235#0" expanded="true" />
             <element signature="e#266#267#0" expanded="true" />
             <element signature="e#406#436#0" expanded="true" />
             <element signature="e#441#530#0" expanded="true" />
+            <element signature="method#initComponents#0;class#Register#0" />
             <element signature="e#1235#1236#0" expanded="true" />
             <element signature="e#1295#1296#0" expanded="true" />
             <element signature="e#1859#2036#0" expanded="true" />
@@ -501,8 +473,16 @@
             <element signature="e#4160#4161#0" expanded="true" />
             <element signature="e#4547#4548#0" expanded="true" />
             <element signature="e#4607#4608#0" expanded="true" />
-            <element signature="e#12243#12244#0" expanded="true" />
-            <element signature="e#12280#12281#0" expanded="true" />
+            <element signature="method#jButton1ActionPerformed#0;class#Register#0" />
+            <element signature="method#jTextField2KeyTyped#0;class#Register#0" />
+            <element signature="method#jTextField2KeyTyped#1;class#Register#0" />
+            <element signature="method#jTextField2MouseReleased#0;class#Register#0" />
+            <element signature="method#jTextField2MouseReleased#1;class#Register#0" />
+            <element signature="method#jTextField2KeyReleased#0;class#Register#0" />
+            <element signature="e#11862#11902#0" />
+            <element signature="method#jTextField2KeyReleased#1;class#Register#0" />
+            <element signature="e#13009#13049#0" />
+            <element signature="docComment;method#setHighlightStart#0;class#Register#0" />
             <element signature="e#12408#12409#0" expanded="true" />
             <element signature="e#12460#12461#0" expanded="true" />
             <element signature="e#12544#12545#0" expanded="true" />

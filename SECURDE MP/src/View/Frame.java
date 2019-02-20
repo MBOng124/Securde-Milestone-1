@@ -188,24 +188,28 @@ public class Frame extends javax.swing.JFrame {
         contentView.show(Content, "adminHomePnl");
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         String log = user.getUsername() + " navigated to admin view at " + timeStamp;
+        main.sqlite.addLog(log);
     }//GEN-LAST:event_adminBtnActionPerformed
 
     private void managerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerBtnActionPerformed
         contentView.show(Content, "managerHomePnl");
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         String log = user.getUsername() + " navigated to manager view at " + timeStamp;
+        main.sqlite.addLog(log);
     }//GEN-LAST:event_managerBtnActionPerformed
 
     private void staffBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffBtnActionPerformed
         contentView.show(Content, "staffHomePnl");
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         String log = user.getUsername() + " navigated to staff view at " + timeStamp;
+        main.sqlite.addLog(log);
     }//GEN-LAST:event_staffBtnActionPerformed
 
     private void clientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientBtnActionPerformed
         contentView.show(Content, "clientHomePnl");
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         String log = user.getUsername() + " navigated to client view at " + timeStamp;
+        main.sqlite.addLog(log);
     }//GEN-LAST:event_clientBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
@@ -221,6 +225,7 @@ public class Frame extends javax.swing.JFrame {
         frameView.show(Container, "loginPnl");
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         String log = user.getUsername() + " logged out at " + timeStamp;
+        main.sqlite.addLog(log);
     }//GEN-LAST:event_logoutBtnActionPerformed
 
     public Main main;

@@ -2,6 +2,8 @@ package View;
 
 import java.awt.Event;
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -175,6 +177,9 @@ public class Login extends javax.swing.JPanel {
             }
 			System.out.println("passwordCounter= " + passwordCounter);
         }
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+        String log = frame.getUser().getUsername() + " logged in at time " +timeStamp;
+        frame.main.sqlite.addLog(log);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

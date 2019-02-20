@@ -1,6 +1,8 @@
 package View;
 
 import java.awt.Event;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -169,6 +171,9 @@ public class Register extends javax.swing.JPanel {
                                 pass = frame.main.hashString(pass);
                                 frame.registerAction(user, pass, confirm);
                                 frame.loginNav();
+                                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+                                String log ="New user registered at time " +timeStamp +" with username "+ username.getText().toString();
+                                frame.main.sqlite.addLog(log);
                             }
                             else{
                                 JOptionPane.showMessageDialog(frame, "Password Should Have At least 1 Special Character... Spaces are not allowed");
@@ -258,6 +263,7 @@ public class Register extends javax.swing.JPanel {
             frame.main.saveConfirm(evt.getKeyChar(), confpass.getCaretPosition());
             temp = confpass.getCaretPosition();
             confpass.setText(frame.main.convertConfirmPassword());
+            System.out.println(temp);
             confpass.setCaretPosition(temp+1);
         }
         else{

@@ -35,6 +35,19 @@ public class SQLite {
             System.out.println("Table users in database.db created.");
         } catch (Exception ex) {}
     }
+
+    public void createLogsTable() {
+        String sql = "CREATE TABLE IF NOT EXISTS logs (\n"
+                + " id INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+                + " log TEXT NOT NULL,\n"
+                + ");";
+
+        try (Connection conn = DriverManager.getConnection(driverURL);
+             Statement stmt = conn.createStatement()) {
+            stmt.execute(sql);
+            System.out.println("Table users in database.db created.");
+        } catch (Exception ex) {}
+    }
     
     public void dropUserTable() {
         String sql = "DROP TABLE users;";
@@ -88,6 +101,16 @@ public class SQLite {
             Statement stmt = conn.createStatement()){
             stmt.execute(sql);
             
+        } catch (Exception ex) {}
+    }
+
+    public void addLog(String log) {
+        String sql = "INSERT INTO logs(log) VALUES('" + log + "')";
+
+        try (Connection conn = DriverManager.getConnection(driverURL);
+             Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+
         } catch (Exception ex) {}
     }
     
