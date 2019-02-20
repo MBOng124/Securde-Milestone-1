@@ -1,0 +1,14 @@
+Authorization, Password field- Marvic Roque
+Audit trail- Mitchell Ong
+Authentication- Carl Raymundo 
+
+Authentication:
+	- put username and password verification
+	- hash the password
+	- lock after certain number of attemps
+
+Authorization:
+	- limit the access to views based on roles.
+	
+Audit trail:
+	- log the activity of the users.

@@ -13,6 +13,7 @@ public class Main {
 
     //Created Attributes 
     private String password;
+    private String confrim;
     private String username;
 
     public static void main(String[] args) {
@@ -53,6 +54,7 @@ public class Main {
         frame.init(this);
 
         setPassword("");
+        setConfrim("");
     }
 
     // THIS WILL CONVERT THE PASSWORD INTO *
@@ -66,9 +68,29 @@ public class Main {
         return convertedPassword;
     }
 
+    public String convertConfirmPassword() {
+        String convertedPassword = "";
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < confrim.length(); i++) {
+            sb.append("*");
+        }
+        convertedPassword = sb.toString();
+        return convertedPassword;
+    }
+
+
     // THIS WILL SAVE THE PASSWORD FOR LOGIN
     public void savePassword(char passText, int index) {
         StringBuilder sb = new StringBuilder(getPassword());
+        sb.insert(index, passText);
+
+        setPassword(sb.toString());
+//        System.out.println("getPassword() = " + getPassword());// DEBUGGING PURPOSES
+    }
+
+    // THIS WILL SAVE THE PASSWORD FOR CONFIRMATION
+    public void saveConfirm(char passText, int index) {
+        StringBuilder sb = new StringBuilder(getConfrim());
         sb.insert(index, passText);
 
         setPassword(sb.toString());
@@ -83,6 +105,22 @@ public class Main {
             sb.delete(start, end);
         } else {
             if (password.length() > 0) {
+                sb.deleteCharAt(caretIndex);
+            }
+        }
+        this.setPassword(sb.toString());
+//        System.out.println("sb = " + sb.toString()); //DEBUGGING PURPOSES
+    }
+
+
+    // WHEN THERE IS AN BACKSPACE EVENT THIS FUNCTION WILL TRIGGER
+    public void backSpaceConfirm(int start, int end, int caretIndex) {
+        StringBuffer sb = new StringBuffer(confrim);
+        System.out.println("start + end = " + start + end);
+        if ((start != end) && (start >= 0 && end > 0)) {
+            sb.delete(start, end);
+        } else {
+            if (confrim.length() > 0) {
                 sb.deleteCharAt(caretIndex);
             }
         }
@@ -148,11 +186,22 @@ public class Main {
         return password;
     }
 
+    public String getConfrim() {
+        return confrim;
+    }
+
     /**
      * @param password the password to set
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @param confrim  the password to set
+     */
+    public void setConfrim(String confrim) {
+        this.confrim = confrim;
     }
 
     /**

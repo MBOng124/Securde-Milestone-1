@@ -74,6 +74,20 @@ public class Register extends javax.swing.JPanel {
         confpass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         confpass.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "CONFIRM PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
 
+        confpass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jTextFieldMouseReleased(evt);
+            }
+        });
+        confpass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt2) {
+                jTextFieldKeyReleased(evt2);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt2) {
+                jTextFieldKeyTyped(evt2);
+            }
+        });
+
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,8 +143,8 @@ public class Register extends javax.swing.JPanel {
         String userPassChecker = "[";
         userPassChecker += user + "]";
         String temp = "";
-        String pass = password.getText();
-        String confirm = confpass.getText();
+        String pass = frame.main.getPassword();
+        String confirm = frame.main.getConfrim();
         Boolean nullTextField;
         
         nullTextField = IsNull(user, pass, confirm);
@@ -190,6 +204,7 @@ public class Register extends javax.swing.JPanel {
      * THIS FUNCTION IS FOR CONVERTING THE TEXT IN THE TEXTFIELD INTO A SET OF *
      */
     private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+
         int temp = 0; // used for caret positioning
         if (evt.getKeyChar() == Event.BACK_SPACE) {
             frame.main.backSpace(this.getHighlightStart(), this.getHighlightEnd(), password.getCaretPosition());
@@ -218,11 +233,49 @@ public class Register extends javax.swing.JPanel {
         frame.main.setUsername(password.getText().toString());
         this.setHighlightStart(password.getSelectionStart());
         this.setHighlightEnd(password.getSelectionEnd());
+
     }//GEN-LAST:event_jTextField2KeyTyped
+
+    private void jTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKeyTyped
+        int temp = 0; // used for caret positioning
+
+        if (evt.getKeyChar() == Event.BACK_SPACE) {
+            frame.main.backSpaceConfirm(this.getHighlightStart(), this.getHighlightEnd(), confpass.getCaretPosition());
+        }
+        else if ((getHighlightStart() != getHighlightEnd()) && (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]")
+                || Character.isLetterOrDigit(evt.getKeyChar()))) {
+            evt.consume();
+            frame.main.backSpaceConfirm(this.getHighlightStart(), this.getHighlightEnd(), confpass.getCaretPosition());
+            frame.main.saveConfirm(evt.getKeyChar(), confpass.getCaretPosition());
+            temp = this.getHighlightStart();
+            confpass.setText(frame.main.convertConfirmPassword());
+            confpass.setCaretPosition(temp+1);
+
+        }
+        else if (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]")
+                || Character.isLetterOrDigit(evt.getKeyChar())) {
+            evt.consume();
+            frame.main.saveConfirm(evt.getKeyChar(), confpass.getCaretPosition());
+            temp = confpass.getCaretPosition();
+            confpass.setText(frame.main.convertConfirmPassword());
+            confpass.setCaretPosition(temp+1);
+        }
+        else{
+            evt.consume();
+        }
+        frame.main.setUsername(confpass.getText().toString());
+        this.setHighlightStart(confpass.getSelectionStart());
+        this.setHighlightEnd(confpass.getSelectionEnd());
+    }//GEN-LAST:event_jTextFieldKeyTyped
 
     private void jTextField2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseReleased
         this.setHighlightStart(password.getSelectionStart());
         this.setHighlightEnd(password.getSelectionEnd());
+    }//GEN-LAST:event_jTextField2MouseReleased
+
+    private void jTextFieldMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseReleased
+        this.setHighlightStart(confpass.getSelectionStart());
+        this.setHighlightEnd(confpass.getSelectionEnd());
     }//GEN-LAST:event_jTextField2MouseReleased
 
     private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
@@ -232,7 +285,14 @@ public class Register extends javax.swing.JPanel {
         this.setHighlightStart(password.getSelectionStart());
         this.setHighlightEnd(password.getSelectionEnd());
     }//GEN-LAST:event_jTextField2KeyReleased
-    
+
+    private void jTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
+//        if(jTextField2.getSelectionStart() == 0 ){
+//
+//        }
+        this.setHighlightStart(confpass.getSelectionStart());
+        this.setHighlightEnd(confpass.getSelectionEnd());
+    }//GEN-LAST:event_jTextFieldKeyReleased
     
     /**
      * @return the highlightStart

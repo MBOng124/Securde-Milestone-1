@@ -136,7 +136,7 @@ public class Login extends javax.swing.JPanel {
             frame.main.setUsername("");
             frame.main.setPassword("");
         } catch (NullPointerException e) {
-    
+
             if(passwordCounter < 4) {
             	jLabel2.setText("Invalid Login Details!!!");
 //            	clearFields();
