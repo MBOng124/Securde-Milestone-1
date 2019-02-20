@@ -16,7 +16,6 @@ public class Login extends javax.swing.JPanel {
     //THESE VARIABLES ARE FOR HIGHLIGHTING INDICES OF PASSWORD
     private int highlightStart;
     private int highlightEnd;
-    private int passwordCounter = 0;
 
     public Login() {
         initComponents();
@@ -91,39 +90,39 @@ public class Login extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField1)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(200, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(303, 303, 303)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(200, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTextField1)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addContainerGap(200, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(303, 303, 303)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(123, 123, 123))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(83, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(123, 123, 123))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -138,44 +137,19 @@ public class Login extends javax.swing.JPanel {
             frame.main.setUsername("");
             frame.main.setPassword("");
         } catch (NullPointerException e) {
-
-            if(passwordCounter < 4) {
-            	jLabel2.setText("Invalid Login Details!!!");
-//            	clearFields();
-            	Thread thread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(3000);
-                            jLabel2.setText("");
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+            jLabel2.setText("Invalid Login Details!!!");
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(3000);
+                        jLabel2.setText("");
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                });
-                thread.start();
-                passwordCounter++;
-            }
-            else {
-            	Message("Textfields are disabled at the moment, please try after 30 seconds");
-            	jTextField1.setEnabled(false);
-            	jTextField2.setEnabled(false);
-            	Thread thread = new Thread(new Runnable(){
-            		@Override
-            		public void run() {
-            			try {
-            				Thread.sleep(30000);
-            				jTextField1.setEnabled(true);
-	    					jTextField2.setEnabled(true);
-	    					passwordCounter = 0;
-            			} catch (InterruptedException ex) {
-            				ex.printStackTrace();
-            			}
-            		}
-				});
-            	thread.start();
-            }
-			System.out.println("passwordCounter= " + passwordCounter);
+                }
+            });
+            thread.start();
         }
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         String log = frame.getUser().getUsername() + " logged in at time " +timeStamp;
@@ -187,7 +161,7 @@ public class Login extends javax.swing.JPanel {
         jTextField1.setText("");
         jTextField2.setText("");
         frame.main.setUsername("");
-        frame.main.setPassword(""); 
+        frame.main.setPassword("");
         frame.registerNav();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -199,7 +173,7 @@ public class Login extends javax.swing.JPanel {
         if (evt.getKeyChar() == Event.BACK_SPACE) {
             frame.main.backSpace(this.getHighlightStart(), this.getHighlightEnd(), jTextField2.getCaretPosition());
         }
-        else if ((getHighlightStart() != getHighlightEnd()) && (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]") 
+        else if ((getHighlightStart() != getHighlightEnd()) && (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]")
                 || Character.isLetterOrDigit(evt.getKeyChar()))) {
             evt.consume();
             frame.main.backSpace(this.getHighlightStart(), this.getHighlightEnd(), jTextField2.getCaretPosition());
@@ -207,9 +181,9 @@ public class Login extends javax.swing.JPanel {
             temp = this.getHighlightStart();
             jTextField2.setText(frame.main.convertPassword());
             jTextField2.setCaretPosition(temp + 1);
-            
+
         }
-        else if (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]") 
+        else if (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]")
                 || Character.isLetterOrDigit(evt.getKeyChar())) {
             evt.consume();
             frame.main.savePassword(evt.getKeyChar(), jTextField2.getCaretPosition());
@@ -232,7 +206,7 @@ public class Login extends javax.swing.JPanel {
 
     private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
 //        if(jTextField2.getSelectionStart() == 0 ){
-//            
+//
 //        }
         this.setHighlightStart(jTextField2.getSelectionStart());
         this.setHighlightEnd(jTextField2.getSelectionEnd());
@@ -278,9 +252,4 @@ public class Login extends javax.swing.JPanel {
     public void setHighlightEnd(int highlightEnd) {
         this.highlightEnd = highlightEnd;
     }
-    
-//    public void clearFields() {
-//    	jTextField1.setText("");
-//    	jTextField2.setText("");
-//    }
 }

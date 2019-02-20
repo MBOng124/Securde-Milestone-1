@@ -8,18 +8,18 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 public class Register extends javax.swing.JPanel {
-
     public Frame frame;
 
     public Register() {
         initComponents();
     }
 
-    //THESE VARIABLES ARE FOR HIGHLIGHTING INDICES OF PASSWORD
-    	private int highlightStart;
-    	private int highlightEnd;
+    private int hStartOfPass;
+    private int hEndOfPass;
 
-    
+    private int hStartOfConfPass;
+    private int hEndOfConfPass;
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -45,22 +45,20 @@ public class Register extends javax.swing.JPanel {
         password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
-        
         password.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTextField2MouseReleased(evt);
+                passwordMouseReleased(evt);
             }
         });
         password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField2KeyReleased(evt);
+                passwordKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField2KeyTyped(evt);
+                passwordKeyTyped(evt);
             }
         });
-        
-        
+
         username.setBackground(new java.awt.Color(240, 240, 240));
         username.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -75,18 +73,17 @@ public class Register extends javax.swing.JPanel {
         confpass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         confpass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         confpass.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "CONFIRM PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
-
         confpass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTextFieldMouseReleased(evt);
+                confpassMouseReleased(evt);
             }
         });
         confpass.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt2) {
-                jTextFieldKeyReleased(evt2);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                confpassKeyReleased(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt2) {
-                jTextFieldKeyTyped(evt2);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                confpassKeyTyped(evt);
             }
         });
 
@@ -103,40 +100,40 @@ public class Register extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(username)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(confpass, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(200, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(200, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(username)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(confpass, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addContainerGap(200, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton2)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(confpass, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton2)
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(confpass, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(64, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -145,10 +142,10 @@ public class Register extends javax.swing.JPanel {
         String userPassChecker = "[";
         userPassChecker += user + "]";
         String temp = "";
-        String pass = frame.main.getPassword();
-        String confirm = frame.main.getConfrim();
+        String pass = frame.main.getRegisterPassword();
+        String confirm = frame.main.getConfPassword();
         Boolean nullTextField;
-        
+
         nullTextField = IsNull(user, pass, confirm);
 
         if (nullTextField == true) {
@@ -156,42 +153,37 @@ public class Register extends javax.swing.JPanel {
         } //                "[!@#$%^&*(),.?\"\':{}|<> ]";
         else if (frame.main.checkIfUserExists(user)) {
             if (VerifyPassword(pass, confirm)) {
-                if(pass.length() > 7){
+                if (pass.length() > 7) {
                     temp = pass;
                     temp.replaceAll(userPassChecker, "");
-                    if(!(temp.length() < pass.length() - 2)){
+                    if (!(temp.length() < pass.length() - 2)) {
                         Pattern p = Pattern.compile("[A-Z]");
                         Pattern p2 = Pattern.compile("[a-z]");
                         Matcher m = p.matcher(pass);
                         Matcher m2 = p2.matcher(pass);
-                        if(m.find() && m2.find()){
+                        if (m.find() && m2.find()) {
                             Pattern p3 = Pattern.compile("[!@#$%^&*(),.?\"\':{}|<> ]");
                             Matcher m3 = p3.matcher(pass);
-                            if(m3.find()){
+                            if (m3.find()) {
                                 pass = frame.main.hashString(pass);
                                 frame.registerAction(user, pass, confirm);
                                 frame.loginNav();
                                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
                                 String log ="New user registered at time " +timeStamp +" with username "+ username.getText().toString();
                                 frame.main.sqlite.addLog(log);
-                            }
-                            else{
+                            } else {
                                 JOptionPane.showMessageDialog(frame, "Password Should Have At least 1 Special Character... Spaces are not allowed");
                             }
-                        }
-                        else{
+                        } else {
                             JOptionPane.showMessageDialog(frame, "Password Should At least have 1 Capital and small Letter");
                         }
-                    }
-                    else{
+                    } else {
                         JOptionPane.showMessageDialog(frame, "Password Should Not Contain more than 3 Characters From Your Username");
                     }
-                }
-                else{
+                } else {
                     JOptionPane.showMessageDialog(frame, "Password Should Be More than 8 Characters!");
                 }
-            }
-            else{
+            } else {
                 JOptionPane.showMessageDialog(frame, "Please Make Sure Your Passwords matches");
             }
         } else {
@@ -203,132 +195,90 @@ public class Register extends javax.swing.JPanel {
         frame.loginNav();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void passwordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyReleased
+        this.sethStartOfPass(password.getSelectionStart());
+        this.sethEndOfPass(password.getSelectionEnd());
+    }//GEN-LAST:event_passwordKeyReleased
 
-    
-    /*
-     * THIS FUNCTION IS FOR CONVERTING THE TEXT IN THE TEXTFIELD INTO A SET OF *
-     */
-    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
-
+    private void passwordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyTyped
         int temp = 0; // used for caret positioning
         if (evt.getKeyChar() == Event.BACK_SPACE) {
-            frame.main.backSpace(this.getHighlightStart(), this.getHighlightEnd(), password.getCaretPosition());
+            frame.main.backSpaceRegisterPass(this.gethStartOfPass(), this.gethEndOfPass(), password.getCaretPosition());
         }
-        else if ((getHighlightStart() != getHighlightEnd()) && (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]") 
+        else if ((gethStartOfPass() != gethEndOfPass()) && (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]")
                 || Character.isLetterOrDigit(evt.getKeyChar()))) {
             evt.consume();
-            frame.main.backSpace(this.getHighlightStart(), this.getHighlightEnd(), password.getCaretPosition());
-            frame.main.savePassword(evt.getKeyChar(), password.getCaretPosition());
-            temp = this.getHighlightStart();
-            password.setText(frame.main.convertPassword());
+            frame.main.backSpaceRegisterPass(this.gethStartOfPass(), this.gethEndOfPass(), password.getCaretPosition());
+            frame.main.saveRegisterPassword(evt.getKeyChar(), password.getCaretPosition());
+            temp = this.gethStartOfPass();
+            password.setText(frame.main.convertRegisterPassword());
             password.setCaretPosition(temp + 1);
-            
-        }
-        else if (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]") 
-                || Character.isLetterOrDigit(evt.getKeyChar())) {
-            evt.consume();
-            frame.main.savePassword(evt.getKeyChar(), password.getCaretPosition());
-            temp = password.getCaretPosition();
-            password.setText(frame.main.convertPassword());
-            password.setCaretPosition(temp + 1);
-        }
-        else{
-            evt.consume();
-        }
-        frame.main.setUsername(password.getText().toString());
-        this.setHighlightStart(password.getSelectionStart());
-        this.setHighlightEnd(password.getSelectionEnd());
-
-    }//GEN-LAST:event_jTextField2KeyTyped
-
-    private void jTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKeyTyped
-        int temp = 0; // used for caret positioning
-
-        if (evt.getKeyChar() == Event.BACK_SPACE) {
-            frame.main.backSpaceConfirm(this.getHighlightStart(), this.getHighlightEnd(), confpass.getCaretPosition());
-        }
-        else if ((getHighlightStart() != getHighlightEnd()) && (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]")
-                || Character.isLetterOrDigit(evt.getKeyChar()))) {
-            evt.consume();
-            frame.main.backSpaceConfirm(this.getHighlightStart(), this.getHighlightEnd(), confpass.getCaretPosition());
-            frame.main.saveConfirm(evt.getKeyChar(), confpass.getCaretPosition());
-            temp = this.getHighlightStart();
-            confpass.setText(frame.main.convertConfirmPassword());
-            confpass.setCaretPosition(temp+1);
 
         }
         else if (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]")
                 || Character.isLetterOrDigit(evt.getKeyChar())) {
             evt.consume();
-            frame.main.saveConfirm(evt.getKeyChar(), confpass.getCaretPosition());
-            temp = confpass.getCaretPosition();
-            confpass.setText(frame.main.convertConfirmPassword());
-            System.out.println(temp);
-            confpass.setCaretPosition(temp+1);
+            frame.main.saveRegisterPassword(evt.getKeyChar(), password.getCaretPosition());
+            temp = password.getCaretPosition();
+            password.setText(frame.main.convertRegisterPassword());
+            password.setCaretPosition(temp + 1);
         }
         else{
             evt.consume();
         }
-        frame.main.setUsername(confpass.getText().toString());
-        this.setHighlightStart(confpass.getSelectionStart());
-        this.setHighlightEnd(confpass.getSelectionEnd());
-    }//GEN-LAST:event_jTextFieldKeyTyped
+//        frame.main.setUsername(username.getText().toString());
+        this.sethStartOfPass(password.getSelectionStart());
+        this.sethEndOfPass(password.getSelectionEnd());
+    }//GEN-LAST:event_passwordKeyTyped
 
-    private void jTextField2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseReleased
-        this.setHighlightStart(password.getSelectionStart());
-        this.setHighlightEnd(password.getSelectionEnd());
-    }//GEN-LAST:event_jTextField2MouseReleased
+    private void passwordMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordMouseReleased
+        this.sethStartOfPass(password.getSelectionStart());
+        this.sethEndOfPass(password.getSelectionEnd());
+//        System.out.println(gethStartOfPass());
+//        System.out.println(gethEndOfPass());
+    }//GEN-LAST:event_passwordMouseReleased
 
-    private void jTextFieldMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseReleased
-        this.setHighlightStart(confpass.getSelectionStart());
-        this.setHighlightEnd(confpass.getSelectionEnd());
-    }//GEN-LAST:event_jTextField2MouseReleased
+    private void confpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_confpassKeyReleased
+        this.sethStartOfConfPass(confpass.getSelectionStart());
+        this.sethEndOfConfPass(confpass.getSelectionEnd());
+    }//GEN-LAST:event_confpassKeyReleased
 
-    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
-//        if(jTextField2.getSelectionStart() == 0 ){
-//            
-//        }
-        this.setHighlightStart(password.getSelectionStart());
-        this.setHighlightEnd(password.getSelectionEnd());
-    }//GEN-LAST:event_jTextField2KeyReleased
+    private void confpassMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confpassMouseReleased
+        this.sethStartOfConfPass(confpass.getSelectionStart());
+        this.sethEndOfConfPass(confpass.getSelectionEnd());
+    }//GEN-LAST:event_confpassMouseReleased
 
-    private void jTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
-//        if(jTextField2.getSelectionStart() == 0 ){
-//
-//        }
-        this.setHighlightStart(confpass.getSelectionStart());
-        this.setHighlightEnd(confpass.getSelectionEnd());
-    }//GEN-LAST:event_jTextFieldKeyReleased
-    
-    /**
-     * @return the highlightStart
-     */
-    public int getHighlightStart() {
-        return highlightStart;
-    }
+    private void confpassKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_confpassKeyTyped
+        int temp = 0; // used for caret positioning
+        if (evt.getKeyChar() == Event.BACK_SPACE) {
+            frame.main.backSpaceConfPass(this.gethStartOfConfPass(), this.gethEndOfConfPass(), confpass.getCaretPosition());
+        }
+        else if ((gethStartOfConfPass() != gethEndOfConfPass()) && (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]")
+                || Character.isLetterOrDigit(evt.getKeyChar()))) {
+            evt.consume();
+            frame.main.backSpaceConfPass(this.gethStartOfConfPass(), this.gethEndOfConfPass(), confpass.getCaretPosition());
+            frame.main.saveConfPassword(evt.getKeyChar(), confpass.getCaretPosition());
+            temp = this.gethStartOfConfPass();
+            confpass.setText(frame.main.convertConfPassword());
+            confpass.setCaretPosition(temp + 1);
+        }
+        else if (((Character)evt.getKeyChar()).toString().matches("[!@#$%^&*(),.?\"\':{}|<> ]")
+                || Character.isLetterOrDigit(evt.getKeyChar())) {
+            evt.consume();
+            frame.main.saveConfPassword(evt.getKeyChar(), confpass.getCaretPosition());
+            temp = confpass.getCaretPosition();
+            confpass.setText(frame.main.convertConfPassword());
+            confpass.setCaretPosition(temp + 1);
+        }
+        else{
+            evt.consume();
+        }
+//        frame.main.setUsername(username.getText().toString());
+        this.sethStartOfConfPass(confpass.getSelectionStart());
+        this.sethEndOfConfPass(confpass.getSelectionEnd());
+    }//GEN-LAST:event_confpassKeyTyped
 
-    /**
-     * @param highlightStart the highlightStart to set
-     */
-    public void setHighlightStart(int highlightStart) {
-        this.highlightStart = highlightStart;
-    }
 
-    /**
-     * @return the highlightEnd
-     */
-    public int getHighlightEnd() {
-        return highlightEnd;
-    }
-
-    /**
-     * @param highlightEnd the highlightEnd to set
-     */
-    public void setHighlightEnd(int highlightEnd) {
-        this.highlightEnd = highlightEnd;
-    }
-    
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField confpass;
     private javax.swing.JButton jButton1;
@@ -337,19 +287,18 @@ public class Register extends javax.swing.JPanel {
     private javax.swing.JTextField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
-    
     public boolean IsNull(String user, String pass, String conf) {
-        	if (user.equals("")) {
-        		return true;
-        	}
+        if (user.equals("")) {
+            return true;
+        }
 
-        	if (pass.equals("")) {
-        		return true;
-        	}
+        if (pass.equals("")) {
+            return true;
+        }
 
-        	if (conf.equals("")) {
-        		return true;
-        	}
+        if (conf.equals("")) {
+            return true;
+        }
 
         return false;
     }
@@ -368,4 +317,60 @@ public class Register extends javax.swing.JPanel {
         confpass.setText("");
     }
 
+    /**
+     * @return the hStartOfPass
+     */
+    public int gethStartOfPass() {
+        return hStartOfPass;
+    }
+
+    /**
+     * @param hStartOfPass the hStartOfPass to set
+     */
+    public void sethStartOfPass(int hStartOfPass) {
+        this.hStartOfPass = hStartOfPass;
+    }
+
+    /**
+     * @return the hEndOfPass
+     */
+    public int gethEndOfPass() {
+        return hEndOfPass;
+    }
+
+    /**
+     * @param hEndOfPass the hEndOfPass to set
+     */
+    public void sethEndOfPass(int hEndOfPass) {
+        this.hEndOfPass = hEndOfPass;
+    }
+
+    /**
+     * @return the hStartOfConfPass
+     */
+    public int gethStartOfConfPass() {
+        return hStartOfConfPass;
+    }
+
+    /**
+     * @param hStartOfConfPass the hStartOfConfPass to set
+     */
+    public void sethStartOfConfPass(int hStartOfConfPass) {
+        this.hStartOfConfPass = hStartOfConfPass;
+    }
+
+    /**
+     * @return the hEndOfConfPass
+     */
+    public int gethEndOfConfPass() {
+        return hEndOfConfPass;
+    }
+
+    /**
+     * @param hEndOfConfPass the hEndOfConfPass to set
+     */
+    public void sethEndOfConfPass(int hEndOfConfPass) {
+        this.hEndOfConfPass = hEndOfConfPass;
+    }
 }
+

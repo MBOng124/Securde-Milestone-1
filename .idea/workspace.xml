@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b62545c-4ade-4553-8811-fcbb14ebc7a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/SECURDE MP/src/Controller/SQLite.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/Controller/SQLite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SECURDE MP/src/View/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/View/Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SECURDE MP/src/View/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/View/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SECURDE MP/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/SECURDE MP/src/View/Register.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,47 +26,54 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            <state relative-caret-position="-879">
+              <caret line="137" column="73" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#234#235#0" expanded="true" />
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#406#436#0" expanded="true" />
-                <element signature="e#441#530#0" expanded="true" />
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#265#266#0" expanded="true" />
+                <element signature="e#398#428#0" expanded="true" />
                 <element signature="method#initComponents#0;class#Register#0" />
-                <element signature="e#1235#1236#0" expanded="true" />
-                <element signature="e#1295#1296#0" expanded="true" />
-                <element signature="e#1859#2036#0" expanded="true" />
-                <element signature="e#2035#2036#0" expanded="true" />
-                <element signature="e#2170#2171#0" expanded="true" />
-                <element signature="e#2229#2230#0" expanded="true" />
-                <element signature="e#2293#2294#0" expanded="true" />
-                <element signature="e#2349#2350#0" expanded="true" />
-                <element signature="e#3662#3839#0" expanded="true" />
-                <element signature="e#3838#3839#0" expanded="true" />
-                <element signature="e#3981#3982#0" expanded="true" />
-                <element signature="e#4040#4041#0" expanded="true" />
-                <element signature="e#4104#4105#0" expanded="true" />
-                <element signature="e#4160#4161#0" expanded="true" />
-                <element signature="e#4547#4548#0" expanded="true" />
-                <element signature="e#4607#4608#0" expanded="true" />
+                <element signature="e#1227#1228#0" expanded="true" />
+                <element signature="e#1287#1288#0" expanded="true" />
+                <element signature="e#1842#2016#0" expanded="true" />
+                <element signature="e#2015#2016#0" expanded="true" />
+                <element signature="e#2150#2151#0" expanded="true" />
+                <element signature="e#2206#2207#0" expanded="true" />
+                <element signature="e#2270#2271#0" expanded="true" />
+                <element signature="e#2323#2324#0" expanded="true" />
+                <element signature="e#3618#3792#0" expanded="true" />
+                <element signature="e#3791#3792#0" expanded="true" />
+                <element signature="e#3926#3927#0" expanded="true" />
+                <element signature="e#3982#3983#0" expanded="true" />
+                <element signature="e#4046#4047#0" expanded="true" />
+                <element signature="e#4099#4100#0" expanded="true" />
+                <element signature="e#4494#4495#0" expanded="true" />
+                <element signature="e#4554#4555#0" expanded="true" />
                 <element signature="method#jButton1ActionPerformed#0;class#Register#0" />
-                <element signature="method#jTextField2KeyTyped#0;class#Register#0" />
-                <element signature="method#jTextField2KeyTyped#1;class#Register#0" />
-                <element signature="method#jTextField2MouseReleased#0;class#Register#0" />
-                <element signature="method#jTextField2MouseReleased#1;class#Register#0" />
-                <element signature="method#jTextField2KeyReleased#0;class#Register#0" />
-                <element signature="e#11862#11902#0" />
-                <element signature="method#jTextField2KeyReleased#1;class#Register#0" />
-                <element signature="e#13009#13049#0" />
-                <element signature="docComment;method#setHighlightStart#0;class#Register#0" />
-                <element signature="e#12408#12409#0" expanded="true" />
-                <element signature="e#12460#12461#0" expanded="true" />
-                <element signature="e#12544#12545#0" expanded="true" />
-                <element signature="e#12579#12580#0" expanded="true" />
-                <element signature="e#12699#12700#0" expanded="true" />
-                <element signature="e#12747#12748#0" expanded="true" />
+                <element signature="method#jButton2ActionPerformed#0;class#Register#0" />
+                <element signature="method#passwordKeyReleased#0;class#Register#0" />
+                <element signature="method#passwordKeyTyped#0;class#Register#0" />
+                <element signature="method#passwordMouseReleased#0;class#Register#0" />
+                <element signature="method#confpassKeyReleased#0;class#Register#0" />
+                <element signature="method#confpassMouseReleased#0;class#Register#0" />
+                <element signature="method#confpassKeyTyped#0;class#Register#0" />
+                <element signature="e#16614#16615#0" expanded="true" />
+                <element signature="e#16649#16650#0" expanded="true" />
+                <element signature="e#16769#16770#0" expanded="true" />
+                <element signature="e#16817#16818#0" expanded="true" />
+                <element signature="e#16897#16898#0" expanded="true" />
+                <element signature="e#16930#16931#0" expanded="true" />
+                <element signature="e#17042#17043#0" expanded="true" />
+                <element signature="e#17086#17087#0" expanded="true" />
+                <element signature="e#17178#17179#0" expanded="true" />
+                <element signature="e#17217#17218#0" expanded="true" />
+                <element signature="e#17353#17354#0" expanded="true" />
+                <element signature="e#17409#17410#0" expanded="true" />
+                <element signature="e#17497#17498#0" expanded="true" />
+                <element signature="e#17534#17535#0" expanded="true" />
+                <element signature="e#17662#17663#0" expanded="true" />
+                <element signature="e#17714#17715#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,11 +82,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="391">
+              <caret line="267" selection-start-line="267" selection-end-line="267" />
               <folding>
-                <element signature="e#5066#5067#0" expanded="true" />
-                <element signature="e#5097#5098#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#479#480#0" expanded="true" />
+                <element signature="e#7337#7338#0" expanded="true" />
+                <element signature="e#7368#7369#0" expanded="true" />
+                <element signature="e#7475#7476#0" expanded="true" />
+                <element signature="e#7515#7516#0" expanded="true" />
+                <element signature="e#7594#7595#0" expanded="true" />
+                <element signature="e#7625#7626#0" expanded="true" />
+                <element signature="e#7732#7733#0" expanded="true" />
+                <element signature="e#7772#7773#0" expanded="true" />
+                <element signature="e#7866#7867#0" expanded="true" />
+                <element signature="e#7905#7906#0" expanded="true" />
+                <element signature="e#8044#8045#0" expanded="true" />
+                <element signature="e#8100#8101#0" expanded="true" />
+                <element signature="e#8187#8188#0" expanded="true" />
+                <element signature="e#8222#8223#0" expanded="true" />
+                <element signature="e#8345#8346#0" expanded="true" />
+                <element signature="e#8393#8394#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Frame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="225" column="108" lean-forward="true" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="108" />
+            <state relative-caret-position="141">
+              <caret line="306" column="16" selection-start-line="306" selection-start-column="16" selection-end-line="306" selection-end-column="16" />
               <folding>
                 <element signature="e#214#215#0" expanded="true" />
                 <element signature="e#246#247#0" expanded="true" />
@@ -165,10 +186,11 @@
       <find>bac</find>
       <find>password</find>
       <find>main</find>
+      <find>log</find>
     </findStrings>
     <replaceStrings>
-      <replace>confpass</replace>
       <replace>Confirm</replace>
+      <replace>confpass</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -178,11 +200,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/SECURDE MP/src/Model/User.java" />
-        <option value="$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java" />
-        <option value="$PROJECT_DIR$/SECURDE MP/src/View/Register.java" />
         <option value="$PROJECT_DIR$/SECURDE MP/src/Controller/SQLite.java" />
         <option value="$PROJECT_DIR$/SECURDE MP/src/View/Frame.java" />
         <option value="$PROJECT_DIR$/SECURDE MP/src/View/Login.java" />
+        <option value="$PROJECT_DIR$/SECURDE MP/src/View/Register.java" />
+        <option value="$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java" />
       </list>
     </option>
   </component>
@@ -288,12 +310,12 @@
       <workItem from="1550405746042" duration="594000" />
       <workItem from="1550452763524" duration="3478000" />
       <workItem from="1550549852463" duration="3676000" />
-      <workItem from="1550628080995" duration="7320000" />
+      <workItem from="1550628080995" duration="8300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17740000" />
+    <option name="totallyTimeSpent" value="18720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -384,17 +406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding>
-            <element signature="e#5066#5067#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/StaffHome.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -405,10 +416,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="181" column="38" lean-forward="true" selection-start-line="179" selection-start-column="8" selection-end-line="181" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Frame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="225" column="108" lean-forward="true" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="108" />
+        <state relative-caret-position="141">
+          <caret line="306" column="16" selection-start-line="306" selection-start-column="16" selection-end-line="306" selection-end-column="16" />
           <folding>
             <element signature="e#214#215#0" expanded="true" />
             <element signature="e#246#247#0" expanded="true" />
@@ -439,56 +457,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Login.java">
+    <entry file="file://$PROJECT_DIR$/SECURDE MP/src/Controller/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="181" column="38" lean-forward="true" selection-start-line="179" selection-start-column="8" selection-end-line="181" selection-end-column="38" />
+        <state relative-caret-position="391">
+          <caret line="267" selection-start-line="267" selection-end-line="267" />
+          <folding>
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#7337#7338#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
+            <element signature="e#7475#7476#0" expanded="true" />
+            <element signature="e#7515#7516#0" expanded="true" />
+            <element signature="e#7594#7595#0" expanded="true" />
+            <element signature="e#7625#7626#0" expanded="true" />
+            <element signature="e#7732#7733#0" expanded="true" />
+            <element signature="e#7772#7773#0" expanded="true" />
+            <element signature="e#7866#7867#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8044#8045#0" expanded="true" />
+            <element signature="e#8100#8101#0" expanded="true" />
+            <element signature="e#8187#8188#0" expanded="true" />
+            <element signature="e#8222#8223#0" expanded="true" />
+            <element signature="e#8345#8346#0" expanded="true" />
+            <element signature="e#8393#8394#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SECURDE MP/src/View/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        <state relative-caret-position="-879">
+          <caret line="137" column="73" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#406#436#0" expanded="true" />
-            <element signature="e#441#530#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#398#428#0" expanded="true" />
             <element signature="method#initComponents#0;class#Register#0" />
-            <element signature="e#1235#1236#0" expanded="true" />
-            <element signature="e#1295#1296#0" expanded="true" />
-            <element signature="e#1859#2036#0" expanded="true" />
-            <element signature="e#2035#2036#0" expanded="true" />
-            <element signature="e#2170#2171#0" expanded="true" />
-            <element signature="e#2229#2230#0" expanded="true" />
-            <element signature="e#2293#2294#0" expanded="true" />
-            <element signature="e#2349#2350#0" expanded="true" />
-            <element signature="e#3662#3839#0" expanded="true" />
-            <element signature="e#3838#3839#0" expanded="true" />
-            <element signature="e#3981#3982#0" expanded="true" />
-            <element signature="e#4040#4041#0" expanded="true" />
-            <element signature="e#4104#4105#0" expanded="true" />
-            <element signature="e#4160#4161#0" expanded="true" />
-            <element signature="e#4547#4548#0" expanded="true" />
-            <element signature="e#4607#4608#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="e#1287#1288#0" expanded="true" />
+            <element signature="e#1842#2016#0" expanded="true" />
+            <element signature="e#2015#2016#0" expanded="true" />
+            <element signature="e#2150#2151#0" expanded="true" />
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2270#2271#0" expanded="true" />
+            <element signature="e#2323#2324#0" expanded="true" />
+            <element signature="e#3618#3792#0" expanded="true" />
+            <element signature="e#3791#3792#0" expanded="true" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#3982#3983#0" expanded="true" />
+            <element signature="e#4046#4047#0" expanded="true" />
+            <element signature="e#4099#4100#0" expanded="true" />
+            <element signature="e#4494#4495#0" expanded="true" />
+            <element signature="e#4554#4555#0" expanded="true" />
             <element signature="method#jButton1ActionPerformed#0;class#Register#0" />
-            <element signature="method#jTextField2KeyTyped#0;class#Register#0" />
-            <element signature="method#jTextField2KeyTyped#1;class#Register#0" />
-            <element signature="method#jTextField2MouseReleased#0;class#Register#0" />
-            <element signature="method#jTextField2MouseReleased#1;class#Register#0" />
-            <element signature="method#jTextField2KeyReleased#0;class#Register#0" />
-            <element signature="e#11862#11902#0" />
-            <element signature="method#jTextField2KeyReleased#1;class#Register#0" />
-            <element signature="e#13009#13049#0" />
-            <element signature="docComment;method#setHighlightStart#0;class#Register#0" />
-            <element signature="e#12408#12409#0" expanded="true" />
-            <element signature="e#12460#12461#0" expanded="true" />
-            <element signature="e#12544#12545#0" expanded="true" />
-            <element signature="e#12579#12580#0" expanded="true" />
-            <element signature="e#12699#12700#0" expanded="true" />
-            <element signature="e#12747#12748#0" expanded="true" />
+            <element signature="method#jButton2ActionPerformed#0;class#Register#0" />
+            <element signature="method#passwordKeyReleased#0;class#Register#0" />
+            <element signature="method#passwordKeyTyped#0;class#Register#0" />
+            <element signature="method#passwordMouseReleased#0;class#Register#0" />
+            <element signature="method#confpassKeyReleased#0;class#Register#0" />
+            <element signature="method#confpassMouseReleased#0;class#Register#0" />
+            <element signature="method#confpassKeyTyped#0;class#Register#0" />
+            <element signature="e#16614#16615#0" expanded="true" />
+            <element signature="e#16649#16650#0" expanded="true" />
+            <element signature="e#16769#16770#0" expanded="true" />
+            <element signature="e#16817#16818#0" expanded="true" />
+            <element signature="e#16897#16898#0" expanded="true" />
+            <element signature="e#16930#16931#0" expanded="true" />
+            <element signature="e#17042#17043#0" expanded="true" />
+            <element signature="e#17086#17087#0" expanded="true" />
+            <element signature="e#17178#17179#0" expanded="true" />
+            <element signature="e#17217#17218#0" expanded="true" />
+            <element signature="e#17353#17354#0" expanded="true" />
+            <element signature="e#17409#17410#0" expanded="true" />
+            <element signature="e#17497#17498#0" expanded="true" />
+            <element signature="e#17534#17535#0" expanded="true" />
+            <element signature="e#17662#17663#0" expanded="true" />
+            <element signature="e#17714#17715#0" expanded="true" />
           </folding>
         </state>
       </provider>

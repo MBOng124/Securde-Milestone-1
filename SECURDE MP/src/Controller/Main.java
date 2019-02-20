@@ -13,7 +13,8 @@ public class Main {
 
     //Created Attributes 
     private String password;
-    private String confrim;
+    private String registerPassword;
+    private String confPassword;
     private String username;
 
     public static void main(String[] args) {
@@ -54,7 +55,8 @@ public class Main {
         frame.init(this);
 
         setPassword("");
-        setConfrim("");
+        setRegisterPassword("");
+        setConfPassword("");
     }
 
     // THIS WILL CONVERT THE PASSWORD INTO *
@@ -67,17 +69,24 @@ public class Main {
         convertedPassword = sb.toString();
         return convertedPassword;
     }
-
-    public String convertConfirmPassword() {
+    public String convertRegisterPassword() {
         String convertedPassword = "";
         StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < confrim.length(); i++) {
+        for (int i = 0; i < registerPassword.length(); i++) {
             sb.append("*");
         }
         convertedPassword = sb.toString();
         return convertedPassword;
     }
-
+    public String convertConfPassword() {
+        String convertedPassword = "";
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < confPassword.length(); i++) {
+            sb.append("*");
+        }
+        convertedPassword = sb.toString();
+        return convertedPassword;
+    }
 
     // THIS WILL SAVE THE PASSWORD FOR LOGIN
     public void savePassword(char passText, int index) {
@@ -87,15 +96,24 @@ public class Main {
         setPassword(sb.toString());
 //        System.out.println("getPassword() = " + getPassword());// DEBUGGING PURPOSES
     }
-
-    // THIS WILL SAVE THE PASSWORD FOR CONFIRMATION
-    public void saveConfirm(char passText, int index) {
-        StringBuilder sb = new StringBuilder(getConfrim());
+    // THIS WILL SAVE THE PASSWORD FOR LOGIN
+    public void saveRegisterPassword(char passText, int index) {
+        StringBuilder sb = new StringBuilder(getRegisterPassword());
         sb.insert(index, passText);
 
-        setPassword(sb.toString());
-//        System.out.println("getPassword() = " + getPassword());// DEBUGGING PURPOSES
+        setRegisterPassword(sb.toString());
+//        System.out.println("getPassword() = " + getRegisterPassword());// DEBUGGING PURPOSES
     }
+    // THIS WILL SAVE THE PASSWORD FOR LOGIN
+    public void saveConfPassword(char passText, int index) {
+        StringBuilder sb = new StringBuilder(getConfPassword());
+        sb.insert(index, passText);
+
+        setConfPassword(sb.toString());
+//        System.out.println("getPassword() = " + getConfPassword());// DEBUGGING PURPOSES
+    }
+
+
 
     // WHEN THERE IS AN BACKSPACE EVENT THIS FUNCTION WILL TRIGGER
     public void backSpace(int start, int end, int caretIndex) {
@@ -112,19 +130,32 @@ public class Main {
 //        System.out.println("sb = " + sb.toString()); //DEBUGGING PURPOSES
     }
 
-
     // WHEN THERE IS AN BACKSPACE EVENT THIS FUNCTION WILL TRIGGER
-    public void backSpaceConfirm(int start, int end, int caretIndex) {
-        StringBuffer sb = new StringBuffer(confrim);
-        System.out.println("start + end = " + start + end);
+    public void backSpaceRegisterPass(int start, int end, int caretIndex) {
+        StringBuffer sb = new StringBuffer(registerPassword);
+//        System.out.println("start + end = " + start + end);
         if ((start != end) && (start >= 0 && end > 0)) {
             sb.delete(start, end);
         } else {
-            if (confrim.length() > 0) {
+            if (registerPassword.length() > 0) {
                 sb.deleteCharAt(caretIndex);
             }
         }
-        this.setPassword(sb.toString());
+        this.setRegisterPassword(sb.toString());
+//        System.out.println("sb = " + sb.toString()); //DEBUGGING PURPOSES
+    }
+
+    public void backSpaceConfPass(int start, int end, int caretIndex) {
+        StringBuffer sb = new StringBuffer(confPassword);
+//        System.out.println("start + end = " + start + end);
+        if ((start != end) && (start >= 0 && end > 0)) {
+            sb.delete(start, end);
+        } else {
+            if (confPassword.length() > 0) {
+                sb.deleteCharAt(caretIndex);
+            }
+        }
+        this.setConfPassword(sb.toString());
 //        System.out.println("sb = " + sb.toString()); //DEBUGGING PURPOSES
     }
 
@@ -186,22 +217,11 @@ public class Main {
         return password;
     }
 
-    public String getConfrim() {
-        return confrim;
-    }
-
     /**
      * @param password the password to set
      */
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    /**
-     * @param confrim  the password to set
-     */
-    public void setConfrim(String confrim) {
-        this.confrim = confrim;
     }
 
     /**
@@ -216,5 +236,32 @@ public class Main {
      */
     public void setUsername(String username) {
         this.username = username;
+    }
+    /**
+     * @return the registerPassword
+     */
+    public String getRegisterPassword() {
+        return registerPassword;
+    }
+
+    /**
+     * @param registerPassword the registerPassword to set
+     */
+    public void setRegisterPassword(String registerPassword) {
+        this.registerPassword = registerPassword;
+    }
+
+    /**
+     * @return the confPassword
+     */
+    public String getConfPassword() {
+        return confPassword;
+    }
+
+    /**
+     * @param confPassword the confPassword to set
+     */
+    public void setConfPassword(String confPassword) {
+        this.confPassword = confPassword;
     }
 }
