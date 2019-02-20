@@ -138,6 +138,9 @@ public class Login extends javax.swing.JPanel {
             frame.main.setPassword("");
         } catch (NullPointerException e) {
             jLabel2.setText("Invalid Login Details!!!");
+            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+            String log = "Invalid Login Details flagged at " + timeStamp;
+            frame.main.sqlite.addLog(log);
             Thread thread = new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -145,6 +148,9 @@ public class Login extends javax.swing.JPanel {
                         Thread.sleep(3000);
                         jLabel2.setText("");
                     } catch (InterruptedException ex) {
+                        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+                        String log = "Interrupted Exception flagged by Login.java " + timeStamp;
+                        frame.main.sqlite.addLog(log);
                         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
